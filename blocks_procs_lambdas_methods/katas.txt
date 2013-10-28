@@ -1,0 +1,53 @@
+1) You have the following class:
+
+   class Computer
+
+     def initialize(computer_id, data_source)
+       @id = computer_id
+       @data_source = data_source
+     end
+
+     def mouse
+       info = @data_source.get_cpu_info(@id)
+       price = @data_source.get_mouse_price(@id)
+       result = "Mouse: #{info} ($#{price})"
+       return " * #{result}" if price >= 100
+       result
+     end
+
+     def cpu
+       info = @data_source.get_cpu_info(@id)
+       price = @data_source.get_cpu_price(@id)
+       result = "Cpu: #{info} ($#{price})"
+       return " * #{result}" if price >= 100
+       result
+     end
+
+     def keyboard
+       info = @data_source.get_keyboard_info(@id)
+       price = @data_source.get_keyboard_price(@id)
+       result = "Keyboard: #{info} ($#{price})"
+       return " * #{result}" if price >= 100
+       result
+     end
+
+   end
+
+  Come up with as many ways as you an think of to DRY this code up using the concepts we
+  talked about today. 
+
+  Constraints: You cannot change the interface of the data_source, and the return value from
+               the methods must remain the same.
+
+  Hint: a recurring pattern is you friend. 
+
+  Extra Credit: One of the ways to DRY this code up involves something method-related, but
+  wasn't something we talked about in class. Hint: It is a built-in feature of Object.
+
+2) You use blocks every day. Where in Rails do you use lambdas on a regular basis?
+
+3) Can you name other places where the Rails framework accepts application-defined blocks,
+   lambdas or methods as an argument to a method? 
+
+4) Can you think of at least one way to write a unit test for a private or protected method 
+   of a class?
